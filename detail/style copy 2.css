@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Cafe24Supermagic-Bold-v1.0";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/Cafe24Supermagic-Bold-v1.0.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: "Cafe24Supermagic-Bold-v1.0", cursive;
+  list-style: none;
+  text-decoration: none;
+  border-collapse: collaps;
+  margin: 0px;
+  padding: 0px;
+  color: black;
+}
+
+/* header1 */
+
+.nav-pills {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 86px;
+  text-align: right;
+}
+.nav > li {
+  margin-left: 40px; /*margin 글씨 간격, margin-left 왼쪽에 붙인다. 글씨를*/
+}
+.nav > li > a {
+  color: black;
+}
+
+.custom-text-color {
+  color: black;
+  font-size: 30px;
+}
+/* 1 */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul,li {
+  list-style: none;
+}
+
+button.transparent-button {
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 20px 0;
+}
+
+article.card {
+  width: 600px;
+  margin: 20px auto;
+  margin-bottom: 60px;
+  background: white;
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+  
+}
+
+/* HEADER2 시작 */
+article.card header {
+  height: 40px;
+  padding: 10px;
+}
+article.card header > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.circle-img {
+  height: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.circle-img > img {
+  height: 100%;
+  border-radius: 50%;
+}
+
+.card-username {
+  padding: 10px 0;
+  font-weight: 900;
+  line-height: 20px;
+  margin-left: 5px;
+  font-size: 13px;
+}
+
+.option-more {
+  float: right;
+  padding: 7px;
+}
+/* HEADER 종료 */
+
+/* CONENT 시작 */
+.card-container {
+  padding: 5px 10px;
+}
+.card-buttons {
+  padding: 0 5px;
+  margin-top: 5px;
+}
+.card-buttons > div {
+  display: inline-block;
+  margin-right: 10px;
+}
+.card-buttons > div.last-card-button {
+  float: right;
+  margin-right: 0;
+}
+/* CONENT 종료 */
+
+/* card-likes시작 */
+.card-likes {
+  font-size: 13px;
+  font-weight: 900;
+  padding: 5px;
+}
+
+/* 본문 */
+.card-content {
+  padding: 2px 5px;
+  font-size: 13px;
+}
+
+.card-content li > div {
+  padding: 1px 0;
+}
+
+.card-content li > div > span {
+  font-weight: 900;
+}
+
+/* card-time */
+.card-time {
+  padding: 3px;
+  font-size: 11px;
+  color: #a0a0a0;
+}
+
+/* 캐러셀 */
+article.card main .carousel {
+  width: 100%;
+  position: relative;
+}
+article.card main .carousel > div {
+  overflow: hidden;
+}
+
+article.card main .carousel ul {
+  width: 10000px;
+}
+
+article.card main .carousel ul > li {
+  display: inline-block;
+}
+article.card main .carousel ul > li img {
+  width: 600px;
+}
+
+
