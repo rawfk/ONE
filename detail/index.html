@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상세</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="indexcopy.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="title">일편단심</h1>
+        <div>
+            <div>
+                <button id="savebtn">
+                    <img src="icons/pen.png">
+                </button>
+                <button>
+                    <img src="icons/home.png">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main_text1">
+        <h1>Team 소개</h1>
+        <div class="contents1">한마디 : 취뽀 성공</div>
+        <div class="introduce">
+            <div class="my_photo">
+                <img src="https://avatars.githubusercontent.com/u/134623719?v=4">
+            </div>
+        </div>
+
+        <div class="my_introduce">
+            <h2>이름 박승주</h2>
+            내용<br>
+            내용<br>
+            내용<br>
+            내용<br>
+            내용<br>
+        </div>
+        <!-- 자신 장점 -->
+        <div class="my_self">
+            <h2>객관적으로 본 자신장점</h2>
+            내용<br>
+            내용<br>
+            내용<br>
+            내용<br>
+            내용<br>
+        </div>
+        <!-- 협업 스타일 -->
+        <div class="my_style">
+            <h2>자신의 스타일 & 협업 스타일</h2>
+            내용<br>
+            내용<br>
+            내용<br>
+            내용<br>
+            내용<br>
+        </div>
+    </div>
+    <!-- 댓글창 -->
+    <div class="card" id="postingbox">
+        <div class="card-header">
+            <p class="fa fa-comment fa">댓글</p>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <div class="form-inline mb-2">
+                        <label for="replyId"><i class="fa fa-user-circle-o fa-2x"></i></label>
+                        <input type="text" class="form-control" id="replyId" placeholder="Enter your Id">
+                    </div>
+                    <textarea class="form-control" id="Textarea1" rows="3"></textarea>
+                    <button id="postingbtn" type="button" class="btn btn-dark mt-3">post</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
