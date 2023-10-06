@@ -3,6 +3,8 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase
 import {
   collection,
   addDoc,
+  query,
+  where
 } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
@@ -38,11 +40,13 @@ $("#postingbtn").click(async function () {
 $("#savebtn").click(async function () {
   $("#postingbox").toggle();
 });
-// 데이터가져오기
-let docs = await getDocs(collection(db, "cmt"));
-docs.forEach((doc) => {
+
+
+
+// 댓글 데이터 가져오기
+let cmtDocs = await getDocs(collection(db, "cmt"));
+cmtDocs.forEach((doc) => {
   let row = doc.data();
-  console.log(row);
 
   let username = row["username"];
   let commentText = row["commentText"];
@@ -50,7 +54,7 @@ docs.forEach((doc) => {
   if (username && commentText) {
     // 새로운 댓글 카드 생성
     let commentCard = `
-            <div class="card">
+            <div class="comments">
                 <div class="card-body">
                     <h5 class="card-title">${username}</h5>
                     <p class="card-text">${commentText}</p>
@@ -67,3 +71,58 @@ docs.forEach((doc) => {
     $("#Textarea1").val("");
   }
 });
+
+//Query String
+let id = new URLSearchParams(location.search).get('id')
+//get query result
+let result = query(collection(db, 'members'), where('id', '==', id))
+//get docs
+let memberDocs = await getDocs(result)
+memberDocs.forEach(doc => {
+    let row = doc.data()
+
+    let image = row['image']
+    let name = row['name']
+    let mbti = row['mbti']
+    let strength = row['strength']
+    let collabStyle = row['collabStyle']
+    let contact = row['contact']
+    let goal = row['goal']
+    let member_html =
+        `
+        <div class="contents1"><h2>한마디 : ${goal}</h2></div>
+        <div class="introduce">
+            <div class="my_photo">
+                <img src="${image}">
+            </div>
+        </div>
+
+        <div class="my_introduce">
+            <h2>이름: ${name}</h2>
+            <h2>MBTI: ${mbti}</h2>
+            <h2>Contact</h2>
+            ${contact}
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+        <div class="my_self">
+            <h2>객관적으로 본 자신장점</h2>
+            ${strength}
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            </div>
+            <div class="my_style">
+            <h2>자신의 스타일 & 협업 스타일</h2>
+            ${collabStyle}
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+        `
+    $('#member').append(member_html)
+})
