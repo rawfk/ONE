@@ -12,10 +12,10 @@
     />
     <link rel="stylesheet" href="jquery.fullPage.css" />
     <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="slide.css" />
     <link rel="stylesheet" href="backgroundimage.css" />
     <link rel="stylesheet" href="section3.css" />
     <link rel="stylesheet" href="section2.css" />
+    <link rel="stylesheet" href="section4.css" />
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -29,6 +29,88 @@
         font-family: "Nanum Pen Script", cursive;
       }
     </style>
+    <script type="module">
+      // Firebase SDK 라이브러리 가져오기
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import {
+        collection,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+      import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+      // Firebase 구성 정보 설정
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDELnW_B2sw9wuh9HWqGOK7H1sCDRb6icM",
+        authDomain: "sparta-ed4eb.firebaseapp.com",
+        projectId: "sparta-ed4eb",
+        storageBucket: "sparta-ed4eb.appspot.com",
+        messagingSenderId: "892038211675",
+        appId: "1:892038211675:web:a49dcb9a75e4fc1f2d377e",
+        measurementId: "G-C9EYT4FXC1",
+      };
+
+      // Firebase 인스턴스 초기화
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      // 섹션3 데이터 넣기
+      $("#postingbtn").click(async function () {
+        let usergatherURL = $("#user-gatherURL").val();
+        let username = $("#user-name").val();
+        let usermbti = $("#user-mbti").val();
+        let userimageURL = $("#user-imageURL").val();
+        let usergoal = $("#user-goal").val();
+        let userpassword = $("#user-password").val();
+        let userstrength = $("#user-strength").val();
+        let usercollabStyle = $("#user-collabStyle").val();
+        let usercontact = $("#user-contact").val();
+
+        let doc = {
+          "user-gatherURL": usergatherURL,
+          "user-name": username,
+          "user-mbti": usermbti,
+          "user-imageURL": userimageURL,
+          "user-goal": usergoal,
+          "user-password": userpassword,
+          "user-strength": userstrength,
+          "user-collabStyle": usercollabStyle,
+          "user-contact": usercontact,
+        };
+        await addDoc(collection(db, "members"), doc);
+        alert("등록되었습니다.");
+        window.location.reload();
+      });
+      // 섹션4 슬라이드 데이터 가져오기
+      let docs = await getDocs(collection(db, "members"));
+
+      $("#card").empty();
+
+      docs.forEach((doc) => {
+        let row = doc.data();
+
+        let usergatherURL = row["user-gatherURL"];
+        let username = row["user-name"];
+        let usermbti = row["user-mbti"];
+        let temp_html = `
+    <div class="col">
+        <div class="card h-100">
+            <img src="${usergatherURL}"
+                class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${username}</h5>
+                <p class="card-text">${usermbti}</p>
+            </div>
+        </div>
+    </div>
+    `;
+        $("#card").append(temp_html);
+      });
+      // 섹션4 상세 보기 클릭
+      // $("#nextbtn").click(async function () {
+      // });
+    </script>
   </head>
 
   <body>
@@ -67,15 +149,21 @@
               alt="sticker1"
             />
             <h1 class="overlay-text">목표</h1>
-            <h1 class="overlay-text1">우리의 목표는 캠프를 통해 전문적인 백엔드 개발자로 성장하는 것입니다.</h1>
+            <h1 class="overlay-text1">
+              우리의 목표는 캠프를 통해 전문적인 백엔드 개발자로 성장하는
+              것입니다.
+            </h1>
           </div>
           <div class="sticker2">
             <img
               src="https://github.com/Junghwan1106/LevelByThree/blob/main/goodnotes%20sticker%20(2).png?raw=true"
               alt="sticker2"
-              />
-              <h1 class="overlay-text">특징</h1>
-              <h1 class="overlay-text1">우리 팀은 프로젝트 일정을 잘 관리하고 필요할 때 조정하여 업무를 효율적으로 진행합니다.</h1>
+            />
+            <h1 class="overlay-text">특징</h1>
+            <h1 class="overlay-text1">
+              우리 팀은 프로젝트 일정을 잘 관리하고 필요할 때 조정하여 업무를
+              효율적으로 진행합니다.
+            </h1>
           </div>
           <div class="sticker3">
             <img
@@ -83,9 +171,17 @@
               alt="sticker3"
             />
             <h1 class="overlay-text">약속</h1>
-            <h3 class="overlay-text2">🚨 슬랙 알림을 꺼두지 말아주세요! 긴급한 연락은 슬랙으로 주시기 바랍니다.</h3>
-            <h3 class="overlay-text3">📝 개인 일정은 꼭! 팀원들에게 사전에 알리거나 기록합시다. 그렇지 않으면 연락을 드릴 예정입니다!</h3>
-            <h3 class="overlay-text4">🙆🏻‍♂️ 서로를 존중하며 예의 있게 대화합시다.</h3>
+            <h3 class="overlay-text2">
+              🚨 슬랙 알림을 꺼두지 말아주세요! 긴급한 연락은 슬랙으로 주시기
+              바랍니다.
+            </h3>
+            <h3 class="overlay-text3">
+              📝 개인 일정은 꼭! 팀원들에게 사전에 알리거나 기록합시다. 그렇지
+              않으면 연락을 드릴 예정입니다!
+            </h3>
+            <h3 class="overlay-text4">
+              🙆🏻‍♂️ 서로를 존중하며 예의 있게 대화합시다.
+            </h3>
           </div>
         </div>
       </section>
@@ -96,33 +192,33 @@
           <form id="form-box">
             <div class="int-area">
               <input
-                type="text"
+                type="url"
                 id="user-gatherURL"
                 autocomplete="off"
                 required
               />
-              <label for="id">게더 캐릭터 URL</label>
+              <label for="user-gatherURL">게더 캐릭터 URL</label>
             </div>
             <div class="int-area">
               <input type="text" id="user-name" autocomplete="off" required />
-              <label for="id">이름</label>
+              <label for="user-name">이름</label>
             </div>
             <div class="int-area">
               <input
-                type="text"
+                type="url"
                 id="user-imageURL"
                 autocomplete="off"
                 required
               />
-              <label for="id">자기 사진 URL</label>
+              <label for="user-imageURL">자기 사진 URL</label>
             </div>
             <div class="int-area">
               <input type="text" id="user-mbti" autocomplete="off" required />
-              <label for="id">MBTI</label>
+              <label for="user-mbti">MBTI</label>
             </div>
             <div class="int-area">
               <input type="text" id="user-goal" autocomplete="off" required />
-              <label for="id">각오</label>
+              <label for="user-goal">각오</label>
             </div>
             <div class="int-area">
               <input
@@ -131,7 +227,7 @@
                 autocomplete="off"
                 required
               />
-              <label for="pw">비밀번호</label>
+              <label for="user-password">비밀번호</label>
             </div>
             <div class="int-area">
               <input
@@ -140,7 +236,7 @@
                 autocomplete="off"
                 required
               />
-              <label for="id">자신의 강점</label>
+              <label for="user-strength">자신의 강점</label>
             </div>
             <div class="int-area">
               <input
@@ -149,7 +245,7 @@
                 autocomplete="off"
                 required
               />
-              <label for="id">협업 스타일</label>
+              <label for="user-collabStyle">협업 스타일</label>
             </div>
             <div class="int-area">
               <input
@@ -158,47 +254,34 @@
                 autocomplete="off"
                 required
               />
-              <label for="id">Github 주소</label>
+              <label for="user-contact">Github 주소</label>
             </div>
             <div class="btn-area">
-              <button type="submit">등록하기</button>
+              <button id="postingbtn" type="submit">등록하기</button>
             </div>
           </form>
         </div>
       </section>
 
       <section class="section s4">
-        <div class="slide_wrapper">
-          <ul class="slides">
-            <li>
-              <div class="card">
+        <div class="mycards">
+          <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+              <div class="card h-100">
                 <img
                   src="https://images.unsplash.com/photo-1446768500601-ac47e5ec3719?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1446&q=80"
                   class="card-img-top"
                   alt="..."
                 />
                 <div class="card-body">
-                  <h5 class="card-title">이름</h5>
-                  <p class="card-text">MBTI</p>
+                  <h5 class="card-title">앨범 제목</h5>
+                  <p class="card-text">앨범 내용</p>
                 </div>
               </div>
-            </li>
-            <li>slide2</li>
-            <li>slide3</li>
-            <li>slide4</li>
-            <li>slide5</li>
-          </ul>
+            </div>
+          </div>
         </div>
-        <p class="controls">
-          <span class="prev">prev</span>
-          <span class="next">next</span>
-        </p>
-        <script src="slide.js"></script>
       </section>
-
-      <!-- <footer class="section fp-auto-height">
-        <h2>footer</h2>
-      </footer> -->
     </main>
   </body>
 </html>
