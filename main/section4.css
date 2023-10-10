@@ -1,3 +1,43 @@
 .mycards{
-    background-color: green;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto auto 60px;
+    width: 60%;
+    height: 60%;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.card-img-top{
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+.card-title{
+    font-size: 30px;
+    font-weight: bold;
+}
+.card-text{
+    font-size: 26px;
+}
+.sectiontitle{
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.detail-button{
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.spartaimg{
+    position: relative;
+    left: 1580px;
+    top: 260px;
 }
