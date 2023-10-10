@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1조 팀페이지</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="jquery.fullPage.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="slide.css" />
+    <link rel="stylesheet" href="backgroundimage.css" />
+    <link rel="stylesheet" href="section3.css" />
+    <link rel="stylesheet" href="section2.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="jquery.fullPage.js"></script>
+    <script src="main.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+      * {
+        font-family: "Nanum Pen Script", cursive;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li data-menuanchor="section1"><a href="#section1">section1</a></li>
+          <li data-menuanchor="section2"><a href="#section2">section2</a></li>
+          <li data-menuanchor="section3"><a href="#section3">section3</a></li>
+          <li data-menuanchor="section4"><a href="#section4">section4</a></li>
+          <!-- <li data-menuanchor="section5"><a href="#section5">section5</a></li> -->
+        </ul>
+      </nav>
+    </header>
+    <main id="fullpage">
+      <section class="section s1">
+        <div class="logo">
+          <img
+            src="https://github.com/Junghwan1106/LevelByThree/blob/main/%EB%A1%9C%EA%B3%A0-removebg-preview.png?raw=true"
+            alt="logo"
+          />
+        </div>
+        <div class="gatherpicture">
+          <img
+            src="https://github.com/Junghwan1106/LevelByThree/blob/main/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-10-10%20141028.png?raw=true"
+            alt="gatherpicture"
+          />
+        </div>
+      </section>
+
+      <section class="section s2">
+        <div class="stickerImages">
+          <div class="sticker1">
+            <img
+              src="https://github.com/Junghwan1106/LevelByThree/blob/main/goodnotes%20sticker%20(1).png?raw=true"
+              alt="sticker1"
+            />
+            <h1 class="overlay-text">목표</h1>
+            <h1 class="overlay-text1">우리의 목표는 캠프를 통해 전문적인 백엔드 개발자로 성장하는 것입니다.</h1>
+          </div>
+          <div class="sticker2">
+            <img
+              src="https://github.com/Junghwan1106/LevelByThree/blob/main/goodnotes%20sticker%20(2).png?raw=true"
+              alt="sticker2"
+              />
+              <h1 class="overlay-text">특징</h1>
+              <h1 class="overlay-text1">우리 팀은 프로젝트 일정을 잘 관리하고 필요할 때 조정하여 업무를 효율적으로 진행합니다.</h1>
+          </div>
+          <div class="sticker3">
+            <img
+              src="https://github.com/Junghwan1106/LevelByThree/blob/main/goodnotes%20sticker%20(3).png?raw=true"
+              alt="sticker3"
+            />
+            <h1 class="overlay-text">약속</h1>
+            <h3 class="overlay-text2">🚨 슬랙 알림을 꺼두지 말아주세요! 긴급한 연락은 슬랙으로 주시기 바랍니다.</h3>
+            <h3 class="overlay-text3">📝 개인 일정은 꼭! 팀원들에게 사전에 알리거나 기록합시다. 그렇지 않으면 연락을 드릴 예정입니다!</h3>
+            <h3 class="overlay-text4">🙆🏻‍♂️ 서로를 존중하며 예의 있게 대화합시다.</h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="section s3">
+        <div class="login-form">
+          <h1>일류 팀원이 되는 양식</h1>
+          <form id="form-box">
+            <div class="int-area">
+              <input
+                type="text"
+                id="user-gatherURL"
+                autocomplete="off"
+                required
+              />
+              <label for="id">게더 캐릭터 URL</label>
+            </div>
+            <div class="int-area">
+              <input type="text" id="user-name" autocomplete="off" required />
+              <label for="id">이름</label>
+            </div>
+            <div class="int-area">
+              <input
+                type="text"
+                id="user-imageURL"
+                autocomplete="off"
+                required
+              />
+              <label for="id">자기 사진 URL</label>
+            </div>
+            <div class="int-area">
+              <input type="text" id="user-mbti" autocomplete="off" required />
+              <label for="id">MBTI</label>
+            </div>
+            <div class="int-area">
+              <input type="text" id="user-goal" autocomplete="off" required />
+              <label for="id">각오</label>
+            </div>
+            <div class="int-area">
+              <input
+                type="password"
+                id="user-password"
+                autocomplete="off"
+                required
+              />
+              <label for="pw">비밀번호</label>
+            </div>
+            <div class="int-area">
+              <input
+                type="text"
+                id="user-strength"
+                autocomplete="off"
+                required
+              />
+              <label for="id">자신의 강점</label>
+            </div>
+            <div class="int-area">
+              <input
+                type="text"
+                id="user-collabStyle"
+                autocomplete="off"
+                required
+              />
+              <label for="id">협업 스타일</label>
+            </div>
+            <div class="int-area">
+              <input
+                type="text"
+                id="user-contact"
+                autocomplete="off"
+                required
+              />
+              <label for="id">Github 주소</label>
+            </div>
+            <div class="btn-area">
+              <button type="submit">등록하기</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section s4">
+        <div class="slide_wrapper">
+          <ul class="slides">
+            <li>
+              <div class="card">
+                <img
+                  src="https://images.unsplash.com/photo-1446768500601-ac47e5ec3719?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1446&q=80"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">이름</h5>
+                  <p class="card-text">MBTI</p>
+                </div>
+              </div>
+            </li>
+            <li>slide2</li>
+            <li>slide3</li>
+            <li>slide4</li>
+            <li>slide5</li>
+          </ul>
+        </div>
+        <p class="controls">
+          <span class="prev">prev</span>
+          <span class="next">next</span>
+        </p>
+        <script src="slide.js"></script>
+      </section>
+
+      <!-- <footer class="section fp-auto-height">
+        <h2>footer</h2>
+      </footer> -->
+    </main>
+  </body>
+</html>
