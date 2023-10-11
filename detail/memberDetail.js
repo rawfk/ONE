@@ -6,7 +6,13 @@ import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-fire
 // Firebase 구성 정보 설정
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-
+  apiKey: "AIzaSyDELnW_B2sw9wuh9HWqGOK7H1sCDRb6icM",
+  authDomain: "sparta-ed4eb.firebaseapp.com",
+  projectId: "sparta-ed4eb",
+  storageBucket: "sparta-ed4eb.appspot.com",
+  messagingSenderId: "892038211675",
+  appId: "1:892038211675:web:a49dcb9a75e4fc1f2d377e",
+  measurementId: "G-C9EYT4FXC1",
 }
 
 // Firebase 인스턴스 초기화
@@ -101,18 +107,18 @@ let docRef = doc(db, 'members', id)
 
 //get a doc with ref and make dynamic html tags
 let result = await getDoc(docRef)
-let imageVal, nameVal, mbtiVal, goalVal, passwordVal, strengthVal, collabStyleVal, contactVal;
+let imageVal, gatherVal, nameVal, mbtiVal, goalVal, passwordVal, strengthVal, collabStyleVal, contactVal;
 if(result.exists()) {
     let row = result.data()
-
-    imageVal = row['image']
-    nameVal = row['name']
-    mbtiVal = row['mbti']
-    goalVal = row['goal']
-    passwordVal = row['password']
-    strengthVal = row['strength']
-    collabStyleVal = row['collabStyle']
-    contactVal = row['contact']
+    imageVal = row['user-imageURL']
+    gatherVal = row['user-gatherURL']
+    nameVal = row['user-name']
+    mbtiVal = row['user-mbti']
+    goalVal = row['user-goal']
+    passwordVal = row['user-password']
+    strengthVal = row['user-strength']
+    collabStyleVal = row['user-collabStyle']
+    contactVal = row['user-contact']
 
     let member_html =
         `
@@ -143,8 +149,7 @@ if(result.exists()) {
             </div>
             <div class="my_style">
             <h2>자신의 스타일 & 협업 스타일</h2>
-            ${    collabStyleVal = row['collabStyle']
-          }
+            ${collabStyleVal}
             <br/>
             <br/>
             <br/>
@@ -189,14 +194,15 @@ if(result.exists()) {
 //update the data
 $('body').on('click', '#updateMember', async function(){
   let updateData = {
-      image: $('#image').val(),
-      name: $('#name').val(),
-      mbti: $('#mbti').val(),
-      goal: $('#goal').val(),
-      password: $('#password').val(),
-      strength: $('#strength').val(),
-      collabStyle: $('#collabStyle').val(),
-      contact: $('#contact').val(),
+    'user-imageURL': $('#image').val(),
+    'user-gatherURL': $('#gather').val(),
+    'user-name': $('#name').val(),
+    'user-mbti': $('#mbti').val(),
+    'user-goal': $('#goal').val(),
+    'user-password': $('#password').val(),
+    'user-strength': $('#strength').val(),
+    'user-collabStyle': $('#collabStyle').val(),
+    'user-contact': $('#contact').val(),
   }
   await updateDoc(doc(db, 'members', id), updateData)
            .then(function() {
@@ -228,6 +234,10 @@ function pwdFunc(){
 
                   <div class="modal-body">
                       <div class="updateMemberBox" id="updateMemberBox"">
+                          <div class="form-floating mb-3">
+                              <input type="text" placeholder="게더 이미지 주소" class="form-control" id="gather" value=${gatherVal}>
+                              <label for="floatingInput">게더 이미지 주소</label>
+                          </div>
                           <div class="form-floating mb-3">
                               <input type="text" placeholder="이미지 주소" class="form-control" id="image" value=${imageVal}>
                               <label for="floatingInput">이미지 주소</label>
@@ -272,7 +282,7 @@ function pwdFunc(){
           </div>
       </div>
       `
-      $('.container').append(update_html)
+      $('body').append(update_html)
   } else {
       alert('비밀번호가 틀렸습니다.')
   }

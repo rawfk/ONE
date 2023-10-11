@@ -1,0 +1,33 @@
+.s1{
+    background-image: url("https://github.com/Junghwan1106/LevelByThree/blob/main/pxfuel.jpg?raw=true");
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+}
+.gatherpicture{
+    position: absolute;
+    left: 20%;
+    bottom: 10%;
+}
+.s2{
+    background-image: url("https://github.com/Junghwan1106/LevelByThree/blob/main/my-neighbor-totoro-side-uhd-4k-wallpaper..jpg?raw=true");
+    background-size: cover;
+    background-position: center;
+}
+.s3{
+    background-image: url("https://github.com/Junghwan1106/LevelByThree/blob/main/566809-digital-art.jpg?raw=true");
+    background-size: cover;
+    background-position: center;
+}
+.s4{
+    background-image: url("https://github.com/Junghwan1106/LevelByThree/blob/main/pxfuel%20(1).jpg?raw=true");
+    background-size: cover;
+    background-position: center;
+}
