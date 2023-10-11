@@ -6,13 +6,6 @@ import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-fire
 // Firebase 구성 정보 설정
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDELnW_B2sw9wuh9HWqGOK7H1sCDRb6icM",
-  authDomain: "sparta-ed4eb.firebaseapp.com",
-  projectId: "sparta-ed4eb",
-  storageBucket: "sparta-ed4eb.appspot.com",
-  messagingSenderId: "892038211675",
-  appId: "1:892038211675:web:a49dcb9a75e4fc1f2d377e",
-  measurementId: "G-C9EYT4FXC1",
 }
 
 // Firebase 인스턴스 초기화
