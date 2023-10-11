@@ -124,6 +124,7 @@ if(result.exists()) {
         `
         <div class="introduce">
           <h2>이름 : ${nameVal}</h2>
+          <br/>
           <div class="my_photo">
             <img src="${imageVal}">
           </div>
@@ -131,21 +132,15 @@ if(result.exists()) {
         
         <div class="my_introduce">
             <h2>한마디 : ${goalVal}</h2>
+            <br/>
+            <br/>
             <h2>MBTI: ${mbtiVal}</h2>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <h2>Contact</h2>
-            <a href="${contactVal}">${contactVal}</a>
-            <br/>
-            <br/>
             <br/>
             <br/>
         </div>
         <div class="my_self">
             <h2>객관적으로 본 자신장점</h2>
-            ${strengthVal}
+              <span> ${strengthVal} </span>
             <br/>
             <br/>
             <br/>
@@ -153,7 +148,13 @@ if(result.exists()) {
             </div>
             <div class="my_style">
             <h2>자신의 스타일 & 협업 스타일</h2>
-            ${collabStyleVal}
+              <span> ${collabStyleVal} </span>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h2>Contact</h2>
+            <a href="${contactVal}">${contactVal}</a>
             <br/>
             <br/>
             <br/>
