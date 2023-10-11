@@ -122,26 +122,25 @@ if(result.exists()) {
 
     let member_html =
         `
-        <div class="contents1"><h2>한마디 : ${goalVal}</h2></div>
         <div class="introduce">
-            <div class="my_photo">
-                <img src="${imageVal}">
-            </div>
+          <h2>이름 : ${nameVal}</h2>
+          <br/>
+          <div class="my_photo">
+            <img src="${imageVal}">
+          </div>
         </div>
-
+        
         <div class="my_introduce">
-            <h2>이름: ${nameVal}</h2>
+            <h2>한마디 : ${goalVal}</h2>
+            <br/>
+            <br/>
             <h2>MBTI: ${mbtiVal}</h2>
-            <h2>Contact</h2>
-            ${contactVal}
-            <br/>
-            <br/>
             <br/>
             <br/>
         </div>
         <div class="my_self">
             <h2>객관적으로 본 자신장점</h2>
-            ${strengthVal}
+              <span> ${strengthVal} </span>
             <br/>
             <br/>
             <br/>
@@ -149,7 +148,13 @@ if(result.exists()) {
             </div>
             <div class="my_style">
             <h2>자신의 스타일 & 협업 스타일</h2>
-            ${collabStyleVal}
+              <span> ${collabStyleVal} </span>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h2>Contact</h2>
+            <a href="${contactVal}">${contactVal}</a>
             <br/>
             <br/>
             <br/>
@@ -267,8 +272,8 @@ function pwdFunc(){
                               <label for="floatingTextarea2">자신의 협업 스타일</label>
                           </div>
                           <div class="form-floating mb-3">
-                              <input type="text" placeholder="블로그, 깃허브 등 정보" class="form-control" id="contact" value=${contactVal}>
-                              <label for="floatingInput">블로그, 깃허브 등 정보</label>
+                              <input type="text" placeholder="깃허브 주소" class="form-control" id="contact" value=${contactVal}>
+                              <label for="floatingInput">깃허브 주소</label>
                           </div>
                       </div>
                   </div>
