@@ -240,27 +240,27 @@ function pwdFunc(){
                   <div class="modal-body">
                       <div class="updateMemberBox" id="updateMemberBox"">
                           <div class="form-floating mb-3">
-                              <input type="text" placeholder="게더 이미지 주소" class="form-control" id="gather" value=${gatherVal}>
+                              <input type="text" placeholder="게더 이미지 주소" class="form-control" id="gather" value=${gatherVal} />
                               <label for="floatingInput">게더 이미지 주소</label>
                           </div>
                           <div class="form-floating mb-3">
-                              <input type="text" placeholder="이미지 주소" class="form-control" id="image" value=${imageVal}>
+                              <input type="text" placeholder="이미지 주소" class="form-control" id="image" value=${imageVal} />
                               <label for="floatingInput">이미지 주소</label>
                           </div>
                           <div class="form-floating mb-3">
-                              <input type="text" placeholder="이름" class="form-control" id="name" value=${nameVal}>
+                              <input type="text" placeholder="이름" class="form-control" id="name" value=${nameVal} />
                               <label for="floatingInput">이름</label>
                           </div>
                           <div class="form-floating mb-3">
-                              <input type="text" placeholder="MBTI" class="form-control" id="mbti" value=${mbtiVal}>
+                              <input type="text" placeholder="MBTI" class="form-control" id="mbti" value=${mbtiVal} />
                               <label for="floatingInput">MBTI</label>
                           </div>
                           <div class="form-floating mb-3">
-                              <input type="text" placeholder="각오" class="form-control" id="goal" value=${goalVal}>
+                              <input type="text" placeholder="각오" class="form-control" id="goal" value='${goalVal}' />
                               <label for="floatingInput">Goal</label>
                           </div>
                           <div class="form-floating mb-3">
-                              <input type="password" placeholder="Password" class="form-control" id="password" value=${passwordVal}>
+                              <input type="password" placeholder="Password" class="form-control" id="password" value=${passwordVal} />
                               <label for="floatingInput">Password</label>
                           </div>
                           <div class="form-floating mb-3">
