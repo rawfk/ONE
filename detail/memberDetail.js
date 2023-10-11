@@ -122,18 +122,22 @@ if(result.exists()) {
 
     let member_html =
         `
-        <div class="contents1"><h2>한마디 : ${goalVal}</h2></div>
         <div class="introduce">
-            <div class="my_photo">
-                <img src="${imageVal}">
-            </div>
+          <h2>이름 : ${nameVal}</h2>
+          <div class="my_photo">
+            <img src="${imageVal}">
+          </div>
         </div>
-
+        
         <div class="my_introduce">
-            <h2>이름: ${nameVal}</h2>
+            <h2>한마디 : ${goalVal}</h2>
             <h2>MBTI: ${mbtiVal}</h2>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <h2>Contact</h2>
-            ${contactVal}
+            <a href="${contactVal}">${contactVal}</a>
             <br/>
             <br/>
             <br/>
@@ -267,8 +271,8 @@ function pwdFunc(){
                               <label for="floatingTextarea2">자신의 협업 스타일</label>
                           </div>
                           <div class="form-floating mb-3">
-                              <input type="text" placeholder="블로그, 깃허브 등 정보" class="form-control" id="contact" value=${contactVal}>
-                              <label for="floatingInput">블로그, 깃허브 등 정보</label>
+                              <input type="text" placeholder="깃허브 주소" class="form-control" id="contact" value=${contactVal}>
+                              <label for="floatingInput">깃허브 주소</label>
                           </div>
                       </div>
                   </div>
