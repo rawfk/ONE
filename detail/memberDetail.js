@@ -112,13 +112,13 @@ if(result.exists()) {
     let row = result.data()
     imageVal = row['user-imageURL']
     gatherVal = row['user-gatherURL']
-    nameVal = row['user-name']
-    mbtiVal = row['user-mbti']
-    goalVal = row['user-goal']
-    passwordVal = row['user-password']
+    nameVal = row['user-name'].replace(/"/g, '&quot;')
+    mbtiVal = row['user-mbti'].replace(/"/g, '&quot;')
+    goalVal = row['user-goal'].replace(/"/g, '&quot;')
+    passwordVal = row['user-password'].replace(/"/g, '&quot;')
     strengthVal = row['user-strength']
     collabStyleVal = row['user-collabStyle']
-    contactVal = row['user-contact']
+    contactVal = row['user-contact'].replace(/"/g, '&quot;')
 
     let member_html =
         `
